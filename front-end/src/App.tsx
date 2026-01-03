@@ -1,4 +1,3 @@
-import { ModeSelector } from './components/ModeSelector';
 import { FileUpload } from './components/FileUpload';
 import { ChatContainer } from './components/Chat';
 import { useChatStore } from './store/useChatStore';
@@ -23,9 +22,6 @@ function App() {
             </button>
           )}
         </header>
-
-        {/* Mode Selector */}
-        <ModeSelector />
 
         {/* File Upload */}
         <FileUpload />

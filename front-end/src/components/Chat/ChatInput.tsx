@@ -5,7 +5,6 @@ import { sendMessage } from '../../services/mockApi';
 export function ChatInput() {
   const [input, setInput] = useState('');
   const {
-    currentMode,
     isLoading,
     addMessage,
     updateMessage,
@@ -41,11 +40,10 @@ export function ChatInput() {
 
     setLoading(true);
 
-    // Stream the response
+    // Stream the response (mode is auto-detected)
     let content = '';
     await sendMessage(
       userMessage,
-      currentMode,
       (chunk) => {
         content += chunk;
         updateMessage(assistantId, content);
@@ -75,7 +73,7 @@ export function ChatInput() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={`Ask me to ${currentMode === 'research' ? 'research' : currentMode === 'summarization' ? 'summarize' : 'fact-check'} something...`}
+          placeholder="Ask me anything... I'll research, summarize, or fact-check based on your question"
           disabled={isLoading}
           rows={1}
           className="

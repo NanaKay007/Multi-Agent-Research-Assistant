@@ -1,0 +1,12 @@
+**Project 1: Multi-Agent Research Assistant**
+- **Tech Stack:** LangChain/LlamaIndex, Azure OpenAI, Redis (memory), FastAPI
+- **Features:**
+  - Multiple specialized agents (research, summarization, fact-checking)
+  - Persistent conversation memory
+  - Tool use (web search, document retrieval, calculation)
+  - Streaming responses
+- **Success Metrics:**
+  - <2s first token latency
+  - 95%+ query success rate
+  - Comprehensive error logging
+- **Time:** 40 hours

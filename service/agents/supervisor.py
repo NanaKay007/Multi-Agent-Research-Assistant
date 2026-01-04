@@ -2,14 +2,14 @@ from langchain.tools import tool
 from langchain_core.messages import AIMessage
 from agents.base import BaseAgent
 from agents.research import ResearchAgent
-from service.agents.fact_checker import FactCheckAgent
+from agents.fact_checker import FactCheckAgent
 
 class SupervisorAgent(BaseAgent):
     """
     Determines what sub-agents to invoke based on human message
     """
     def __init__(self):
-        tools = [self.invoke_fact_check, self.invoke_research, self.invoke_summarization]
+        tools = [self.invoke_fact_check, self.invoke_research]
         super().__init__(
             system_prompt="You are a helpful assistant tasked with answering any queries the user might have. You have specialized tools at your disposal. Use them at your convenience if it helps you answer the user's query.",
             tools=tools)

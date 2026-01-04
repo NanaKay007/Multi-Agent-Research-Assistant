@@ -1,6 +1,6 @@
 from agents.base import BaseAgent
 from langchain.tools import tool
-from ..utils.research_tools import ResearchTools
+from .research_tools import ResearchTools
 
 class ResearchAgent(BaseAgent):
     def __init__(self):
